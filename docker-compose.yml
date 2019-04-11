@@ -1,0 +1,27 @@
+version: "2"
+services:
+  python:
+    container_name: python
+    command: python manage.py runserver 0.0.0.0:8000
+    build:
+      context: ./python
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - python/.env.local
+    volumes:
+      - ./python/frankie:/var/task/frankie
+      - ./python/polls:/var/task/polls
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:11.2
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./python/db-data:/var/lib/postgresql/data

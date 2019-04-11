@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "django_settings": "frankie.settings",
+    "aws_region": "eu-central-1",
+    "profile_name": "default",
+    "project_name": "python",
+    "runtime": "python3.7",
+    "s3_bucket": "",
+    "slim_handler": false,
+    "vpc_config": {
+      "SubnetIds": ["", ""],
+      "SecurityGroupIds": [""]
+    },
+    "aws_environment_variables": {
+      "MY_ENV": "this is the env variable from aws_environment_variables",
+      "POSTGRES_DB_NAME": "",
+      "POSTGRES_DB_USER": "",
+      "POSTGRES_DB_PASSWORD": "",
+      "POSTGRES_DB_HOST": "",
+      "POSTGRES_DB_PORT": ""
+    }
+  }
+}
